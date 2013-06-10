@@ -19,6 +19,7 @@
 		B1FF78661765E324006A92FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1FF78651765E324006A92FF /* ViewController.m */; };
 		B1FF78691765E325006A92FF /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FF78671765E325006A92FF /* ViewController_iPhone.xib */; };
 		B1FF786C1765E325006A92FF /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1FF786A1765E325006A92FF /* ViewController_iPad.xib */; };
+		B1FF78741765E44C006A92FF /* UIWebView+ToFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B1FF78731765E44C006A92FF /* UIWebView+ToFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		B1FF78651765E324006A92FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B1FF78681765E325006A92FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		B1FF786B1765E325006A92FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		B1FF78721765E44C006A92FF /* UIWebView+ToFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+ToFile.h"; sourceTree = "<group>"; };
+		B1FF78731765E44C006A92FF /* UIWebView+ToFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+ToFile.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				B1FF785C1765E324006A92FF /* AppDelegate.m */,
 				B1FF78641765E324006A92FF /* ViewController.h */,
 				B1FF78651765E324006A92FF /* ViewController.m */,
+				B1FF78721765E44C006A92FF /* UIWebView+ToFile.h */,
+				B1FF78731765E44C006A92FF /* UIWebView+ToFile.m */,
 				B1FF78671765E325006A92FF /* ViewController_iPhone.xib */,
 				B1FF786A1765E325006A92FF /* ViewController_iPad.xib */,
 				B1FF78531765E324006A92FF /* Supporting Files */,
@@ -180,6 +185,7 @@
 				B1FF78591765E324006A92FF /* main.m in Sources */,
 				B1FF785D1765E324006A92FF /* AppDelegate.m in Sources */,
 				B1FF78661765E324006A92FF /* ViewController.m in Sources */,
+				B1FF78741765E44C006A92FF /* UIWebView+ToFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +283,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebViewToFile/UIWebViewToFile-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewToFile/UIWebViewToFile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,6 +295,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebViewToFile/UIWebViewToFile-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewToFile/UIWebViewToFile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIWebView+ToFile.h
 //  UIWebViewToFile
 //
 //  Created by Tracy E on 13-6-10.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface UIWebView (ToFile)
+
+- (UIImage *)imageRepresentation;
+
+- (NSData *)PDFData;
 
 @end

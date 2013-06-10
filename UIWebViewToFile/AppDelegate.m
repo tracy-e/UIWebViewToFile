@@ -3,7 +3,7 @@
 //  UIWebViewToFile
 //
 //  Created by Tracy E on 13-6-10.
-//  Copyright (c) 2013年 Tracy E. All rights reserved.
+//  Copyright (c) 2013 EsoftMobile.com. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -21,7 +21,8 @@
     } else {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_viewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
