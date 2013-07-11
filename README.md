@@ -1,7 +1,7 @@
 UIWebViewToFile
 ===============
 
-Convert UIWebView Context to Image and PDF files.
+Convert UIWebView Context to Image or PDF files.
 
 ```objective-c
 @interface UIWebView (ToFile)
