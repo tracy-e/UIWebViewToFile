@@ -11,19 +11,23 @@
 
 @implementation UIWebView (ToFile)
 
-//may have some easier method.
 - (UIImage *)imageRepresentation{
-    CGSize boundsSize = self.bounds.size;
-    CGFloat boundsWidth = self.bounds.size.width;
-    CGFloat boundsHeight = self.bounds.size.height;
+    CGFloat scale = [UIScreen mainScreen].scale;
     
-    CGPoint offset = self.scrollView.contentOffset;
+    CGSize boundsSize = self.bounds.size;
+    CGFloat boundsWidth = boundsSize.width;
+    CGFloat boundsHeight = boundsSize.height;
+    
+    CGSize contentSize = self.scrollView.contentSize;
+    CGFloat contentHeight = contentSize.height;
+
     [self.scrollView setContentOffset:CGPointMake(0, 0)];
     
-    CGFloat contentHeight = self.scrollView.contentSize.height;
+    
+    CGPoint offset = self.scrollView.contentOffset;
     NSMutableArray *images = [NSMutableArray array];
     while (contentHeight > 0) {
-        UIGraphicsBeginImageContext(boundsSize);
+        UIGraphicsBeginImageContextWithOptions(boundsSize, NO, 0.0);
         [self.layer renderInContext:UIGraphicsGetCurrentContext()];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -33,11 +37,17 @@
         [self.scrollView setContentOffset:CGPointMake(0, offsetY + boundsHeight)];
         contentHeight -= boundsHeight;
     }
+    
     [self.scrollView setContentOffset:offset];
     
-    UIGraphicsBeginImageContext(self.scrollView.contentSize);
+    CGSize imageSize = CGSizeMake(contentSize.width * scale,
+                                  contentSize.height * scale);
+    UIGraphicsBeginImageContext(imageSize);
     [images enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
-        [image drawInRect:CGRectMake(0, boundsHeight * idx, boundsWidth, boundsHeight)];
+        [image drawInRect:CGRectMake(0,
+                                     scale * boundsHeight * idx,
+                                     scale * boundsWidth,
+                                     scale * boundsHeight)];
     }];
     UIImage *fullImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
