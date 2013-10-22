@@ -23,7 +23,6 @@
 
     [self.scrollView setContentOffset:CGPointMake(0, 0)];
     
-    
     CGPoint offset = self.scrollView.contentOffset;
     NSMutableArray *images = [NSMutableArray array];
     while (contentHeight > 0) {
