@@ -21,9 +21,10 @@
     CGSize contentSize = self.scrollView.contentSize;
     CGFloat contentHeight = contentSize.height;
 
+    CGPoint offset = self.scrollView.contentOffset;
+
     [self.scrollView setContentOffset:CGPointMake(0, 0)];
     
-    CGPoint offset = self.scrollView.contentOffset;
     NSMutableArray *images = [NSMutableArray array];
     while (contentHeight > 0) {
         UIGraphicsBeginImageContextWithOptions(boundsSize, NO, 0.0);
